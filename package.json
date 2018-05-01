@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/nikwib/playlist-api/issues"
   },
+  "engines": {
+    "node": "9.9.0"
+  },
   "homepage": "https://github.com/nikwib/playlist-api#readme",
   "dependencies": {
     "dotenv": "^5.0.1",
