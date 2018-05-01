@@ -20,7 +20,7 @@ const addPlaylist = async ctx => {
 			ctx.body = await Playlist.create(playlist);
 			ctx.status = 201;
 		} catch (error) {
-			throw new HTTPError(400, `error creating entry into db: ${error}`);
+			throw new HTTPError(400, `Error creating entry into db: ${error}`);
 		}
 	}
 };
@@ -30,9 +30,9 @@ const getPlaylists = async ctx => {
 		ctx.body = await Playlist.find({});
 		ctx.status = 200;
 	} catch (error) {
-		throw new HTTPError(500, `Error reading from DB${error}`);
+		throw new HTTPError(500, `Error reading from DB ${error}`);
 	}
-}
+};
 
 const getPlaylistInfo = async ctx => {
 	try {
@@ -44,7 +44,7 @@ const getPlaylistInfo = async ctx => {
 			ctx.status = 200;
 		}
 	} catch (e) {
-		throw new HTTPError(500, `Problems accessing the database, please try again..`)
+		throw new HTTPError(500, 'Problems accessing the database, please try again..');
 	}
 };
 
@@ -68,7 +68,7 @@ const addToPlaylist = async ctx => {
 			ctx.status = 201;
 			ctx.body = playlist.videos[playlist.videos.length - 1];
 		} catch (e) {
-			throw new HTTPError(500, `Problems accessing the database, please try again.`)
+			throw new HTTPError(500, `Problems accessing the database, please try again. ${e}`);
 		}
 	}
 };
